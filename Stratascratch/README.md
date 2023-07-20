@@ -31,6 +31,16 @@ FROM employee
 
 ## ID-9905(Medium)- Highest Target Under Manager
 
+#### Companies asked: ![image](https://github.com/zizanayub/SQL-Daily-Practices/assets/65456659/7c0a1dca-80d1-46a0-93d3-06f2480848c3)
+
+
+Find the highest target achieved by the employee or employees who works under the manager id 13. Output the first name of the employee and target achieved. The solution should show the highest target achieved under manager_id=13 and which employee(s) achieved it.
+
+#### Table
+
+![image](https://github.com/zizanayub/SQL-Daily-Practices/assets/65456659/848faa32-c9ff-4b70-8cb5-41ad55f4cb41)
+
+
 #### Query
 ```SQL
 SELECT
