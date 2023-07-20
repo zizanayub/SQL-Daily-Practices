@@ -31,7 +31,7 @@ FROM employee
 
 ## ID-9905(Medium)- Highest Target Under Manager
 
-#### Companies asked: ![image](https://github.com/zizanayub/SQL-Daily-Practices/assets/65456659/7c0a1dca-80d1-46a0-93d3-06f2480848c3)
+#### Companies asked: Salesforce
 
 
 Find the highest target achieved by the employee or employees who works under the manager id 13. Output the first name of the employee and target achieved. The solution should show the highest target achieved under manager_id=13 and which employee(s) achieved it.
@@ -41,7 +41,7 @@ Find the highest target achieved by the employee or employees who works under th
 ![image](https://github.com/zizanayub/SQL-Daily-Practices/assets/65456659/848faa32-c9ff-4b70-8cb5-41ad55f4cb41)
 
 
-#### Query
+#### 💡 Query
 ```SQL
 SELECT
     first_name,
@@ -63,7 +63,7 @@ WHERE ranked_employees = 1;
 ![image](https://github.com/zizanayub/SQL-Daily-Practices/assets/65456659/69f558cd-ebb2-4743-b502-dc349af5e21c)
 
 
-#### Total time taken: 07:12 min
+#### ⏲️ Total time taken: 07:12 min
 
 #### Approaches:
 
