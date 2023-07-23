@@ -114,3 +114,46 @@ each new launched car.
 1. 💡 You can use `CASE` statement with 1 condition also. Here is this example. 
 
 2. GROUP the whole query by `company_name`
+
+
+
+
+
+## ID-2053(Hard)- Retention Rate
+
+Companies Asked: Meta, Salesforce
+
+Find the monthly retention rate of users for each account separately for Dec 2020 and Jan 2021. Retention rate is the percentage of active users an account retains over a given period of time. In this case, assume the user is retained if he/she stays with the app in any future months. For example, if a user was active in Dec 2020 and has activity in any future month, consider them retained for Dec. You can assume all accounts are present in Dec 2020 and Jan 2021. Your output should have the account ID and the Jan 2021 retention rate divided by Dec 2020 retention rate.
+
+
+![image](https://github.com/zizanayub/SQL-Daily-Practices/assets/65456659/f8155979-a2a9-4bff-9ecf-a5f2ca2d28d7)
+
+Link: https://platform.stratascratch.com/coding/2053-retention-rate
+
+#### Query:
+
+```SQL
+SELECT
+    account_id,
+    ROUND(SUM(january_retention)/SUM(december_retention)) AS retention
+FROM 
+(
+SELECT
+    *,
+    CASE WHEN date_format(last_date,"%Y-%m") > '2020-12' THEN 1 ELSE 0 END 
+       AS december_retention,
+    CASE WHEN date_format(last_date,"%Y-%m") > '2021-01' THEN 1 ELSE 0 END 
+       AS january_retention
+FROM
+(
+SELECT 
+    account_id,
+    user_id,
+    MIN(date) AS first_date,
+    MAX(date) AS last_date
+FROM sf_events
+GROUP BY account_id,user_id
+) AS info_by_users
+) As final_retention
+GROUP BY account_id
+```
